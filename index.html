@@ -19,15 +19,25 @@
                 <button type="submit" class="btn btn-primary" id="show">Show</button>
             </div>
             <div class="bottom">
-                <form id="formSum">
+                <form id="form">
                     <div class="fields" id="fields">
                     </div>
                     <div class="buttons">
                         <button type="reset" class="btn btn-light">Clear</button>
-                        <button type="submit" class="btn btn-success" id="sum">Sum</button>
+                        <select id="select" class="custom-select" id="inputGroupSelect01">
+                            <option selected >Sum</option>
+                            <option>Sub</option>
+                            <option>Mul</option>
+                            <option>Div</option>
+                          </select>
+                          <button type="submit" class="btn btn-success" id="calculate">Calculate</button>
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="result">
+            <h4>Result:</h4>
+            <input id="result" class="form-control" type="text" placeholder="Result" readonly/>
         </div>
     </body>
 </html>

@@ -3,6 +3,7 @@ body {
     background-color: #315481;
     background-image: linear-gradient(to bottom, #315481, #918e82 100%);
     background-attachment: fixed;
+    color: #000000;
 
     position: absolute;
     top: 0;
@@ -11,6 +12,7 @@ body {
     right: 0;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -101,7 +103,7 @@ form {
     margin: 2px;
 }
 
-#formSum {
+#form {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -113,4 +115,25 @@ form {
 .buttons {
     max-width: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+}
+
+.result input {
+    text-align: center;
+}
+
+.custom-select {
+    width: 15%;
+    background-color: #f8f9fa;
+    color: #212529;
 }
