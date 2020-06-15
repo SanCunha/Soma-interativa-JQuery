@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     var fatherDiv = $('#fields');
     var btnShow = $('#show');
+    var btnReset = $('#reset');
     var messageShow = $('.warningShow');
     var fields = 0;
     var operator = "+";
@@ -42,6 +43,16 @@ $(document).ready(function(){
         shown = true;
     }
 
+    function showResult(value){
+        $("#result").val(value);
+    }
+
+    function reset(){
+        fatherDiv.empty();
+        savedValues.splice(0,);
+        showResult(0.0);
+    }
+
     $('#numberFields').on('change', function (event){ /* Função para captar mudanças na quantidade de campos */
         if (!isNumber(event.target.value) || (!event.target.value)){
             messageShow.css("display", "block");
@@ -74,7 +85,7 @@ $(document).ready(function(){
     btnShow.click(function(){ /* Função para exibir campos dinamicamente */
         if (shown == true){ /* Função para que os campos não seja replicados */
             show == false;
-            fatherDiv.empty();
+            reset();
         }
         if (Number.isInteger(fields)){ /* Mais uma validação para a quantidade de campos */
             messageShow.css("display", "none")
@@ -85,6 +96,12 @@ $(document).ready(function(){
         }
         
         
+    });
+
+    btnReset.click(function() {
+        reset();
+        operator = "+";
+        showFields(fields, operator, savedValues)
     });
 
     $("#form").submit(function( event ) { /* Função para tratar e exibir resultados dos campos dinâmicos*/
@@ -118,7 +135,7 @@ $(document).ready(function(){
             }
         });
         if (validatorNumber == 0){
-            $("#result").val(result);
+            showResult(result);
         }
         
         event.preventDefault();
