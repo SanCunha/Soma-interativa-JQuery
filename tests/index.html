@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unitary Tests </title>
+        <!--Inclui a folha de estilo do QUnit -->
+        <link rel="stylesheet"
+        href="http://code.jquery.com/qunit/qunit-1.19.0.css">
+    </head>
+    <body>
+        <!-- Interface de usuário do QUnit-->
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <!-- Fim -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Incluir arquivo javascript de funcionamento do QUnit-->
+        <script src="http://code.jquery.com/qunit/qunit-1.19.0.js"></script>
+        <!-- Incluir arquivo javascript com os testes utilizando o QUnit-->
+        <script src="tests.js"></script>
+    </body>
+    <script language="javascript">
+        function isNumber(e) { /* Função auxiliar para inputs */
+            if ($.isNumeric(e)) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</html>
